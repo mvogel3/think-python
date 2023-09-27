@@ -37,11 +37,22 @@ def draw_box():
     line = ' - '
     row = '+'+line*4
     rows = row*2+'+'
-    # column = '|'+len(rows)
     print(rows)
-    do_twice(print_twice, '|')
-    print(row*2+'+')
-    do_twice(print_twice, '|')
-    print(row*2+'+')
+    do_twice(print_twice, '|            |            |')
+    print(rows)
+    do_twice(print_twice, '|            |            |')
+    print(rows)
+    
 
 draw_box()
+
+def draw_four_box():
+    line = ' - '
+    row = '+'+line*4
+    rows = row*4+'+'
+    for i in range(1,5):
+        print(rows)
+        do_twice(print_twice, '|            |            |            |            |')
+    print(rows)
+
+draw_four_box()
