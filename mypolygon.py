@@ -1,3 +1,4 @@
+# renamed turtle.py. can't have module name in the file name
 # cloned PythonData env
 # brew installed python-tk
 # needed to run on a Python shell???
@@ -27,12 +28,18 @@ def polygon1(t, n, length):
 polygon1(bob, 8, 90)
 
 def circle1(t, r):
+    # first attempt at a circle. just makes a giant octagon
+    polygon1(bob, 10, 360)
+
+circle1(bob, 5)
+
+def circle2(t, r):
     circumference = 2 * math.pi * r
     n = 70
     length = circumference / n
     polygon1(t, n, length)
 
-circle1(bob, 95)
+circle2(bob, 95)
 
 def arc1(t, r, angle):
     arc_length = 2 * math.pi * r * angle / 360
