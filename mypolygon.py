@@ -3,7 +3,7 @@
 # needed to run on a Python shell???
 
 import turtle
-
+import math
 
 bob = turtle.Turtle()
 
@@ -18,18 +18,54 @@ def square(t, length):
         t.lt(90)
 
 square(bob, 200)
-def polygon(t, length, n):
+def polygon1(t, n, length):
     angle = 360/n
     for i in range(n):
         t.fd(length)
         t.lt(angle)
 
-polygon(bob, 90, 8)
+polygon1(bob, 8, 90)
+
+def circle1(t, r):
+    circumference = 2 * math.pi * r
+    n = 70
+    length = circumference / n
+    polygon1(t, n, length)
+
+circle1(bob, 95)
+
+def arc1(t, r, angle):
+    arc_length = 2 * math.pi * r * angle / 360
+    n = int(arc_length / 3) + 1
+    step_length = arc_length / n
+    step_angle = angle / n
+
+    for i in range(n):
+        t.fd(step_length)
+        t.lt(step_angle)
+
+def polyline(t, n, length, angle):
+    """draws n line segments with the given length and angle 
+    (in degrees) between them. 
+    t is a turtle. """
+    for i in range(n):
+        t.fd(length)
+        t.lt(angle)
+
+
+def polygon(t, n, length):
+    angle = 360/n
+    polyline(t, n , length, angle)
+
+def arc(t, r, angle):
+    arc_length = 2 * math.pi * r * angle / 360
+    n = int(arc_length / 3) + 1
+    step_length = arc_length / n
+    step_angle = angle / n
+    polyline(t, n, step_length, step_angle)
 
 def circle(t, r):
-    polygon(bob, 10, 360)
+    arc(t, r, 360)
 
-circle(bob, 5)
-
-
+circle(bob, 95)
 turtle.done()
