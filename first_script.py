@@ -33,6 +33,15 @@ def do_four(f, arg):
 
 do_four(print_twice, 'spam')
 
+line1 = 'bing tiddle'
+line2 = 'tiddle bang'
+def cat_twice(part1, part2):
+    cat = part1 + part2
+    print_twice(cat)
+
+cat_twice(line1, line2)
+
+# exercise 3.13
 def draw_box():
     line = ' - '
     row = '+'+line*4
