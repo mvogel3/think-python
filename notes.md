@@ -15,3 +15,4 @@
 **Chapter 5:** deals with conditionals and their terminology. 
 * each condition is checked in order. if more than one condition is true, only the first branch runs.
 * avoid nested conditionals when possible for the sake of readability.
+* recursion errors
