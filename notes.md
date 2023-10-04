@@ -22,3 +22,8 @@
 * fruitful functions are functions with a return value. some void functions have return values. the difference is that in a fruitful function the return statement includes an expression.
 * in a fruitful function, it is a good idea to ensure that every possible path through the program hits a return statement!!
 * must use a print statement in order for fruitful functions to show in console when invoked. 
+* without the print statement, could you then pass the return value of a function as an argument for another function?
+
+### <br>
+1) Start with a working program and make small incremental changes. At any point, if there is an error, you should have a good idea where it is.
+2) Use variables to 
