@@ -1,5 +1,4 @@
 import time
-import math
 import turtle
 
 x = 2
