@@ -75,8 +75,46 @@ else:
 def factorial(n):
     if n == 0:
         return 1
-    else: # using the else because first if is a boolean??
+    else: # using the else because first condition is a boolean??
         recurse = factorial(n-1)
         result = n * recurse
         return result
 
+def fibonacci(n):
+    """another recursive function used to return the next fibonacci number?"""
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        # print(fibonacci(n-1))
+        # print(fibonacci(n-2))
+        return fibonacci(n-1) + fibonacci(n-2)
+print(fibonacci(7))
+def factorial_revised(n):
+    if not isinstance(n, int):
+        print('Factorial is only designed for integers.')
+        return None
+    elif n < 0:
+        print('Factorial is not defined for negative integers')
+        return None
+    elif n == 0:
+        return 1
+    else:
+        return n * factorial_revised(n-1)
+    
+
+def b(z):
+    prod = a(z, z) # prod = a passing z as both x and y 
+    print(z, prod)
+    return prod
+def a(x, y):
+    x = x + 1
+    return x * y
+def c(x, y, z):
+    total = x + y + z
+    square = b(total)**2
+    return square
+x = 1
+y = x + 1
+print(c(x, y+3, x+y))
