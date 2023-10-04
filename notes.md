@@ -24,6 +24,7 @@
 * must use a print statement in order for fruitful functions to show in console when invoked. 
 * without the print statement, could you then pass the return value of a function as an argument for another function?
 
-### <br>
+#### Key Aspects of Incremental Programming <br>
 1) Start with a working program and make small incremental changes. At any point, if there is an error, you should have a good idea where it is.
-2) Use variables to 
+2) Use variables to hold intermediate values so you can display and check them.
+3) Once the program is working, you might want to remove some of the scaffolding or consolidate multiple statements into compound expressions, but only if it does not make the program difficult to read.

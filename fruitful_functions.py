@@ -51,3 +51,32 @@ print(round(hypotenuse(4, 7), 2))
 # using the round function to round down to the nearest 2 decimals. can't decide whether 
 # to use it in the function or outside of it. may depend on the use case
 
+# function that calls both area and distance functions using a compound expression
+def circle_area(xc, yc, xp, yp):
+    return area(distance(xc, yc, xp, yp))
+
+def is_divisible(x, y):
+    return x % y == 0 # no need to add the conditional. result of == is a boolean
+    if x % y == 0:
+        return True
+    else:
+        return False
+# is_divisible(250, 7)
+if is_divisible(250, 5):
+    print('x is divisible by y')
+
+def is_between(x, y, z):
+    return x <= y <= z # if the arguments aren't satisfactory, the function returns False
+if is_between(5, 25, 15):
+    print('y is between x and z')
+else:
+    print('y is not between x and z')      
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else: # using the else because first if is a boolean??
+        recurse = factorial(n-1)
+        result = n * recurse
+        return result
+

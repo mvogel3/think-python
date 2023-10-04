@@ -143,3 +143,5 @@ def draw(p, length, n):
 # draw(bob, 10, 3)
 
 turtle.done()
+
+
