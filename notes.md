@@ -1,6 +1,7 @@
 # Research
 * Python shell vs zsh shell
 * look into the 4.12 exercises and try learning the math
+* revisit base cases
 
 # Chapter Summaries/Take Aways/Notes
 
@@ -23,6 +24,7 @@
 * in a fruitful function, it is a good idea to ensure that every possible path through the program hits a return statement!!
 * must use a print statement in order for fruitful functions to show in console when invoked. 
 * without the print statement, could you then pass the return value of a function as an argument for another function?
+* if you can write a recursive definition of something, you can write a python program to evaluate it. 
 
 #### Key Aspects of Incremental Programming <br>
 1) Start with a working program and make small incremental changes. At any point, if there is an error, you should have a good idea where it is.

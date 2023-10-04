@@ -118,3 +118,49 @@ def c(x, y, z):
 x = 1
 y = x + 1
 print(c(x, y+3, x+y))
+
+def ack(m, n):
+    """ackermann function"""
+    if m == 0:
+        return n + 1
+    if m > 0 and n ==0:
+        return ack(m-1, 1)
+    if m > 0 and n > 0:
+        return ack(m-1, ack(m, n-1))
+# print(ack(3, 4))
+
+
+def is_palendrome(word):
+    """slices the string and reverses it"""
+    if word == word[::-1]:
+        return True
+    else: 
+        return False
+def isPalendrome(w):
+    """divides the word in half and returns false if one half doesn't match the other"""
+    for i in range(0, int(len(w)/2)):
+        if w[i] != w[len(w)-i-1]:
+            return False
+        else:
+            return True
+my_word = 'noon'
+print(isPalendrome(my_word))
+
+def is_power(a, b):
+    """determines whether a is a power of b"""
+    if a % b == 0 and b % (a/b) == 0:
+        return True
+    else: 
+        return False
+print(is_power(9, 3))
+
+def gcd(a, b):
+    a = int(a)
+    b = int(b)
+    if a > b:
+        c = a - b
+        gcd(b, c)
+    elif a < b:
+        c = b - a
+        gcd(a, c)
+    # else:
