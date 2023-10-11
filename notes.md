@@ -19,7 +19,7 @@
 * recursion errors
 * _ _main_ _ like the main branches in git?
 
-**Chapter 6:** 
+**Chapter 6:** functions thus far in the book have resulted in print statements and not returns. this chapter deals with fruitful functions or functions that yield return values. if you want to see what a fruitful function returns, you have to call it using a print statement otherwise there will be no output in the terminal. i'm guessing that this is the reason why the author chooses to introduce incremental development. incremental development involves testing a small amount of code at a time which cuts down on debugging and also ensures that you know if a fruitful function works should you call it later in your program.
 * fruitful functions are functions with a return value. some void functions have return values. the difference is that in a fruitful function the return statement includes an expression.
 * in a fruitful function, it is a good idea to ensure that every possible path through the program hits a return statement!!
 * must use a print statement in order for fruitful functions to show in console when invoked. 
@@ -30,3 +30,10 @@
 1) Start with a working program and make small incremental changes. At any point, if there is an error, you should have a good idea where it is.
 2) Use variables to hold intermediate values so you can display and check them.
 3) Once the program is working, you might want to remove some of the scaffolding or consolidate multiple statements into compound expressions, but only if it does not make the program difficult to read.
+
+**Chapter 7:** shorter chapter that largely deals with algorithms using while loops. math heavy and somewhat difficult to understand. 
+* recursion is a kind of iteration
+* assignment and equality are not the same in programming. python scripts are interpreted as linear.
+* the body of a while loop should should change the value of one or more variables so that the condition becomes false eventually and the loop terminates.
+* loops beginning with "while True:" are always true so you have to tell it to break. always true bc the loop is the condition (page 66)
+* debugging by bisection: find places in the program where there might be errors and place print statements (or something else that has a verifiable effect) in them before running the program again. if it is incorrect, then the problem is below it.
