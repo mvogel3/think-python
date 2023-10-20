@@ -37,3 +37,5 @@
 * the body of a while loop should should change the value of one or more variables so that the condition becomes false eventually and the loop terminates.
 * loops beginning with "while True:" are always true so you have to tell it to break. always true bc the loop is the condition (page 66)
 * debugging by bisection: find places in the program where there might be errors and place print statements (or something else that has a verifiable effect) in them before running the program again. if it is incorrect, then the problem is below it.
+
+**Chapter 8:** 
