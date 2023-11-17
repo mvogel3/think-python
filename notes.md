@@ -38,4 +38,11 @@
 * loops beginning with "while True:" are always true so you have to tell it to break. always true bc the loop is the condition (page 66)
 * debugging by bisection: find places in the program where there might be errors and place print statements (or something else that has a verifiable effect) in them before running the program again. if it is incorrect, then the problem is below it.
 
+(starting again with chapter 8 after a month hiatus)<br>
+
 **Chapter 8:** 
+* for obvious reasons, the index value has to be an integer.
+* line 7 in strings.py --> the reason last = fruit[length-1] is because length equals 6 and the index of fruit is 0 to 5
+* the operator [n:m] for string slices includes the n but excludes m.
+* strings are immutable so the best you can do is create a new string that is a variation of the original.
+* count not figure out the three parameter function in 8.7. what is the difference btwn using a string traversal vs the index?
