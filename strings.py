@@ -72,3 +72,43 @@ def in_both(word1, word2):
     return letters
 print(in_both('apples', 'oranges'))
 
+print(fruit.count('n'))
+
+print(fruit[0:5:2])
+
+def isPalendrome(w):
+    """shortened version of palendrome function using a Python string method"""
+    if w[::-1]:
+        return True
+
+print(isPalendrome('hannah'))
+
+def any_lowercase1(s):
+    for c in s:
+        if c.islower():
+            return True
+        else:
+            return False
+        
+def any_lowercase2(s):
+    for c in s:
+        if 'c'.islower():
+            return 'True'
+        else:
+            return 'False'
+        
+def any_lowercase3(s):
+    # flags = []
+    for c in s:
+        flag = c.islower()
+        # flags.append(flag)
+    return flag
+
+def any_lowercase4(s):
+    flag = False
+    for c in s:
+        flag = flag or c.islower()
+        # flags.append(flag)
+    return flag
+        
+any_lowercase4('haNnah')

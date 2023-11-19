@@ -47,3 +47,10 @@
 * strings are immutable so the best you can do is create a new string that is a variation of the original.
 * count not figure out the three parameter function in 8.7. what is the difference btwn using a string traversal vs the index?
 * the debugging section in this chapter may be useful later on
+
+[string methods in python](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
+*8.4*
+1. the first function is designed to test if any letter in the word is lowercase but it ends if the first letter is not lowecase. so if the first letter is uppercase it returns False. the function runs as intended if the else: statement is removed.
+2. the second function runs as intended but the making the iterator a string before calling the method confuses me.
+3. function returns nothing as is even with a print statement. needs a conditional 
