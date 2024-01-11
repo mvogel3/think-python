@@ -33,7 +33,7 @@ print(s[6:12])
 
 
 def find(word, letter, place):
-    '''returns the index of a lette. place argument added for repeat letters or to clarify 
+    '''returns the index of a letter. place argument added for repeat letters or to clarify 
     where in the index to start finding'''
     index = 0
     while index < len(word):
