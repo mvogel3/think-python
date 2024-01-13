@@ -54,3 +54,19 @@
 1. the first function is designed to test if any letter in the word is lowercase but it ends if the first letter is not lowecase. so if the first letter is uppercase it returns False. the function runs as intended if the else: statement is removed.
 2. the second function runs as intended but the making the iterator a string before calling the method confuses me.
 3. function returns nothing as is even with a print statement. needs a conditional 
+
+
+(starting again with chapter 9 after a month hiatus)<br>
+
+**Chapter 9:** case study involving solving word puzzles using word properties. I was able to find the txt file from another repo. the file is not a csv which makes it easier to read in i'm guessing.<br>
+
+for some reason I could not print the results of two functions both acting on fin. they both can exist in the file without error but i can't print the two lists at the same time. I'm assuming this is because the functions are changing the variable and so two changes can't happen at once but i've never come across this before. does fin need to be named a global variable?
+
+stackoverflow advised against using global variables so I opened words.txt as a local variable in each function and that seemed to fix the problem. 
+
+*9.7*
+1. wrote a function that returned true for any three sets of double letters. (three_doubles_works)
+2. tried to edit that function to recognized consecutives. that didn't work so I moved on to a recursion function. 
+3. recursion function works on its own(doubles_recursion).
+4. created a new function that takes words.txt as the object for doubles_recursion. this runs with an index error. 
+5. called three_doubles_works and appended the True values to a new list. ran that list through doubles_recursion and it worked! however, I'm guessing this isn't the most optimal solution so I'll keep working on the string index out of range error from before.

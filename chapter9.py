@@ -115,22 +115,6 @@ def is_palendrome(word):
 
 # exercises
 
-# def three_doubles():
-#     fin = open('words.txt')
-#     word_list = []
-#     for line in fin:
-#         i = 0
-#         char_count = len(line)
-#         while i < char_count-1:
-#             if char_count[i+1] != char_count[i]:
-
-#         i = i + 1
-                
-
-#         if char_count > 20:
-#             word_list.append(line)
-#     return word_list
-
 def three_doubles_works(word):
     '''this function returns true for three double letters but not consecutive double letters'''
     i = 0
@@ -138,29 +122,15 @@ def three_doubles_works(word):
     while i < len(word)-1:
         if word[i] == word[i+1]:
             j = j + 1
-            print(j)
+            # print(j)
         i = i + 1
     if j == 3:
         return True
 
 print(three_doubles_works('mississippi'))
 
-def three_doubles(word):
-    '''this function returns true for three double letters but not consecutive double letters'''
-    i = 0
-    j = 0
-    while i < len(word)-1:
-        if word[i] == word[i+1] and word[i+2] == word[i+3] and word[i+4] == word[i+5]:
-            j = j + 1
-            print(j)
-        i = i + 1
-    if j == 3:
-        return True
-    
-# print(three_doubles('mississippi'))
-
 def doubles_recursion(word):
-    '''function returns true for three consecutive double letters but only if '''
+    '''function returns true for three consecutive double letters using recursion'''
     if word[0] == word[1] and word[2] == word[3] and word[4] == word[5]:
         return True
     elif word[0] != word[1]:
@@ -168,17 +138,26 @@ def doubles_recursion(word):
     else:
         return False
 
-print(doubles_recursion('abcmmssii'))
+print(doubles_recursion('bookkeeper'))
 
-def doubles_recursions(word):
-    j = 0
-    previous = word[0]
-    if j == 3:
-        return True
-    for w in word:
-        if w == previous:
-            j = j + 1
-        previous = w
-        
-      
+def three_doubles():
+    fin = open('words.txt')
+    word_list = []
+    consecutive_list = []
+    final_list = []
+    for line in fin:
+        char_count = len(line)
+        if char_count > 6:
+            word_list.append(line)
+    print(len(word_list))
+    for words in word_list:
+        if three_doubles_works(words) == True:
+            consecutive_list.append(words)
+    # return consecutive_list
+    for c in consecutive_list:
+        if doubles_recursion(c) == True:
+            final_list.append(c)
+    return final_list
+
+print(three_doubles()) 
                 
