@@ -67,6 +67,9 @@ stackoverflow advised against using global variables so I opened words.txt as a 
 *9.7*
 1. wrote a function that returned true for any three sets of double letters. (three_doubles_works)
 2. tried to edit that function to recognized consecutives. that didn't work so I moved on to a recursion function. 
-3. recursion function works on its own(doubles_recursion).
+3. recognized that 3 consecutive doubles is 3 index pairs and we're looking for one set of 6 letters.recursion function works on its own(doubles_recursion).
 4. created a new function that takes words.txt as the object for doubles_recursion. this runs with an index error. 
 5. called three_doubles_works and appended the True values to a new list. ran that list through doubles_recursion and it worked! however, I'm guessing this isn't the most optimal solution so I'll keep working on the string index out of range error from before.
+6. tested 'forget' on doubles_recursion and got the same index error (special case).
+7. used print statements for debugging. appened the "wrong" words to a list, printed the length of that list, and then used the len number as an index on the word list. the 164th word in word_list is 'abjectness' which has a double letter at the end. another special case. 
+8. amended the first conditional in doubles_recursion so that if the word ever gets to be less than 6 characters, the return is false. IT WORKS!

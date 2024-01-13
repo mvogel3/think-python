@@ -131,32 +131,43 @@ print(three_doubles_works('mississippi'))
 
 def doubles_recursion(word):
     '''function returns true for three consecutive double letters using recursion'''
-    if word[0] == word[1] and word[2] == word[3] and word[4] == word[5]:
+    if len(word) <= 6:
+        return False
+    elif word[0] == word[1] and word[2] == word[3] and word[4] == word[5]:
         return True
     elif word[0] != word[1]:
         return doubles_recursion(word[1:])
+    # elif len(word) <= 6:
+    #     return False
     else:
         return False
 
-print(doubles_recursion('bookkeeper'))
+print(doubles_recursion('forgetfulness'))
 
 def three_doubles():
     fin = open('words.txt')
     word_list = []
     consecutive_list = []
     final_list = []
+    false_list = []
     for line in fin:
         char_count = len(line)
-        if char_count > 6:
+        if char_count >= 6:
             word_list.append(line)
-    print(len(word_list))
+    print(word_list[163])
     for words in word_list:
-        if three_doubles_works(words) == True:
+        if doubles_recursion(words) == True:
             consecutive_list.append(words)
-    # return consecutive_list
+            print(len(consecutive_list))
+        elif doubles_recursion(words) == False:
+            false_list.append(words)
+            # print(len(false_list))
+    # print(consecutive_list)
+    return consecutive_list
     for c in consecutive_list:
         if doubles_recursion(c) == True:
             final_list.append(c)
+        print(len(final_list))
     return final_list
 
 print(three_doubles()) 
