@@ -73,3 +73,6 @@ stackoverflow advised against using global variables so I opened words.txt as a 
 6. tested 'forget' on doubles_recursion and got the same index error (special case).
 7. used print statements for debugging. appened the "wrong" words to a list, printed the length of that list, and then used the len number as an index on the word list. the 164th word in word_list is 'abjectness' which has a double letter at the end. another special case. 
 8. amended the first conditional in doubles_recursion so that if the word ever gets to be less than 6 characters, the return is false. IT WORKS!
+
+*9.9*
+I needed to look at a solution for the age palendrome function. I plan to go back and see if I can understand it and go about the problem a different (albeit less optimal) way.

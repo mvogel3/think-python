@@ -122,12 +122,27 @@ def three_doubles_works(word):
     while i < len(word)-1:
         if word[i] == word[i+1]:
             j = j + 1
-            # print(j)
         i = i + 1
     if j == 3:
         return True
 
 print(three_doubles_works('mississippi'))
+
+def find_double(word):
+    '''github solution that perfects the three_doubles_works function
+    I was working on. '''
+    i = 0
+    ctr = 0 
+    while i < len(word) - 2:
+        if word[i+1] == word[i]:
+            ctr += 1
+            i += 2
+            if ctr == 3:
+                return word
+            else:
+                ctr = 0
+                i += 1
+    return None
 
 def doubles_recursion(word):
     '''function returns true for three consecutive double letters using recursion'''
@@ -137,8 +152,6 @@ def doubles_recursion(word):
         return True
     elif word[0] != word[1]:
         return doubles_recursion(word[1:])
-    # elif len(word) <= 6:
-    #     return False
     else:
         return False
 
@@ -146,29 +159,41 @@ print(doubles_recursion('forgetfulness'))
 
 def three_doubles():
     fin = open('words.txt')
-    word_list = []
     consecutive_list = []
-    final_list = []
-    false_list = []
     for line in fin:
-        char_count = len(line)
-        if char_count >= 6:
-            word_list.append(line)
-    print(word_list[163])
-    for words in word_list:
-        if doubles_recursion(words) == True:
-            consecutive_list.append(words)
-            print(len(consecutive_list))
-        elif doubles_recursion(words) == False:
-            false_list.append(words)
-            # print(len(false_list))
-    # print(consecutive_list)
+        if doubles_recursion(line) == True:
+            consecutive_list.append(line)
     return consecutive_list
-    for c in consecutive_list:
-        if doubles_recursion(c) == True:
-            final_list.append(c)
-        print(len(final_list))
-    return final_list
 
 print(three_doubles()) 
-                
+
+def odometer_palindrome():
+    palendrome_list = []
+    for i in range(100000, 1000000): # 100K to 1m not including 1m
+        i = str(i) # transforms each integer i to a string so that they can be sliced by index
+        if is_palendrome(i[2:6]) == True:
+            palendrome_list.append(i)
+        if is_palendrome(i[1:6]) == True:
+            palendrome_list.append(i)
+        if is_palendrome(i)==True:
+            palendrome_list.append(i)     
+    print(len(palendrome_list))
+    return palendrome_list
+# print(odometer_palindrome())
+
+def age_palendrome():
+    diff = 15
+    while diff < 50:
+        ctr = 0
+        my_age = 0
+        while my_age < 99:
+            parent_age = my_age + diff
+
+
+
+    
+        if is_palendrome(my_age) == parent_age:
+            ctr += 1
+        else:
+            diff += 1
+    
