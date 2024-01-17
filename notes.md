@@ -64,6 +64,8 @@ for some reason I could not print the results of two functions both acting on fi
 
 stackoverflow advised against using global variables so I opened words.txt as a local variable in each function and that seemed to fix the problem. 
 
+this chapter allowed me to realize that although I'm able to solve a few coding problems at this point, it takes me a very long time to come up with the solution and that solution is often lengthy and doesn't adhere to best practices. after completing this textbook, I'll need to practice more leetcode/interview style problems. 
+
 *9.7*
 1. wrote a function that returned true for any three sets of double letters. (three_doubles_works)
 2. tried to edit that function to recognized consecutives. that didn't work so I moved on to a recursion function. 
@@ -76,3 +78,20 @@ stackoverflow advised against using global variables so I opened words.txt as a 
 
 *9.9*
 I needed to look at a solution for the age palendrome function. I plan to go back and see if I can understand it and go about the problem a different (albeit less optimal) way.
+
+**Chapter 10:** This chapter deals with lists.
+after skimming the glossary section, I realized that this chapter teaches many of the techniques I was using 
+
+### Notes
+* the elements of a list do not have to be the same type
+* lists are mutable. 
+* the syntax for accessing list elements is the same as strings. uses []. <br>
+any integer expression can be used as an index. <br>
+if you try to read or write an element that does not exist, you will get an index error. <br>
+if an index error has a negative value, it counts backwards from the end of the list. <br>
+* the most common way to traverse a list is a for loop. but if you want to write or update a list, you need to use indices. usually done by combining len and range.
+* the nested list counts as a single element (i.e. the list inside of a list counts as 1)
+* if you omit the first index in slicing, the slice starts at the beginning. if you omit the second index, the slicee goes to the end. if you omit both, the slice is a copy of the whole list. 
+* a slice operator on the left side of an assignment can update multiple elements.
+* total += x is the same as total = total + x
+* most list operations are some combination of map, filter, and reduce.
