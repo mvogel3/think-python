@@ -82,7 +82,7 @@ I needed to look at a solution for the age palendrome function. I plan to go bac
 **Chapter 10:** This chapter deals with lists.
 after skimming the glossary section, I realized that this chapter teaches many of the techniques I was using 
 
-### Notes
+### <u>Notes</u>
 * the elements of a list do not have to be the same type
 * lists are mutable. 
 * the syntax for accessing list elements is the same as strings. uses []. <br>
@@ -95,3 +95,8 @@ if an index error has a negative value, it counts backwards from the end of the 
 * a slice operator on the left side of an assignment can update multiple elements.
 * total += x is the same as total = total + x
 * most list operations are some combination of map, filter, and reduce.
+* a list of characters does not a string make
+* calling a built-in method requires dot notation. why?
+* if two objects are identical, they are also equivalent. but if they are equivalent, they are not necessarily identical.<br>
+
+### <ins>Objects</ins> 

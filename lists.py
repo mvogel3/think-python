@@ -64,3 +64,23 @@ def only_upper(t):
             res.append(s)
     return res
 print(only_upper(sublist))
+
+print(sublist.pop(1)) # "pops out" one element and deletes the rest of the list
+myList = ['howdy', 'there', 'partner', 'I', 'do', 'not', 'know']
+del myList[0] # deletes one or more items from a list
+print(myList)
+
+s = 'spam'
+f = list(s) # breaks a string into individual characters
+print(f)
+
+s = 'pining for the fjords'
+f = s.split() # built-in method that splits on white space or a specified delimiter
+print(f)
+
+s = 'pining-for-the-fjords'
+delimiter = '-'
+f = s.split(delimiter) 
+print(f)
+s = delimiter.join(f) # join is the inverse method of split
+print(s)
