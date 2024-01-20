@@ -84,3 +84,84 @@ f = s.split(delimiter)
 print(f)
 s = delimiter.join(f) # join is the inverse method of split
 print(s)
+
+# 10.11 - Aliasing
+a = [1, 2, 3]
+b = a
+print(b is a)
+b[1] = 5 # mutating a list (works with aliasing)
+print(a)
+b = [3, 2, 1] # reassigning value of the variable (does not work with aliasing)
+print(a)
+
+# 10.12 - List Arguments
+letters = ['a', 'b', 'c']
+def delete_head(t):
+    del t[0]
+    return t
+print(delete_head(letters)) # removes 'a' and returns the new list
+print(letters) # proves that the list was modified to ['b', 'c']
+
+def bad_delete_head(t):
+    t = t[1:]
+    return t
+    
+print(bad_delete_head(letters)) # returns just 'c'
+print(letters) # proves that the list was not modified. returns ['b', 'c'] from previous function
+
+def tail(t):
+    '''revision of bad_delete_head that appends the 
+    divergence of t from letters to a new list'''
+    return t[1:] # removes the assignment aspect of bad_delete_head()
+rest = tail(letters) # assigns the new list (t) to a new variable called rest
+print(rest)
+
+# 10.15 - Exercises
+nest_list = [[1, 2], 3, [4], [5, 6, 7]]
+print(len(nest_list))
+def nested_sum(b):
+    ctr = 0
+    indices = []
+    one_list = []
+    i = 0
+    for a in b:
+        if type(a) is list:
+            ctr += 1
+            k = b.index(a)
+            indices.append(k) # saves the index numbers of the nests
+            print(indices)
+        else:
+            one_list.append(a)
+            print(one_list)
+            i = 0
+            # while i < len(b)-1: # len(b)-1 because i is starting at 0
+            for h in indices:
+                print(b[i])
+                print(h)
+                if h == b.index(b[i]):
+                    # print(b.pop(i))
+                    print(b[i])
+                    return b.pop(i)
+                else:
+                    return False
+                    i += 1
+
+                          
+                    #     i += 1
+                    # return b.pop(i)
+                        
+                        
+    
+                    
+
+
+    # return indices # if the result is [0, 2, 3], then the function is saving the indices of the nest correctly
+    # return ctr # if ctr = 3, then the function is counting all the nests correctly
+            
+print(nested_sum(nest_list))
+    # while i < len(b)-1:
+    #     if type(a) is list:
+    #         ctr += 1
+    #         i += 1
+    #     else:
+    #         i += 1

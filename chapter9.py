@@ -130,7 +130,7 @@ print(three_doubles_works('mississippi'))
 
 def find_double(word):
     '''github solution that perfects the three_doubles_works function
-    I was working on. '''
+    I was working on.'''
     i = 0
     ctr = 0 
     while i < len(word) - 2:

@@ -17,7 +17,9 @@
 * each condition is checked in order. if more than one condition is true, only the first branch runs.
 * avoid nested conditionals when possible for the sake of readability.
 * recursion errors
-* _ _main_ _ like the main branches in git?
+* page 44: _ _main_ _ like the main branches in git?<br>
+after working through stack diagram 10.5 in Chapter 10:<br>
+_ _main_ _ is the first layer of a function. its empty in the stack diagram of countdown because there are no variables in the file (outside of the function) that get passed through it. "n" is created when the function is called so it shows up in the second layer of the diagram.
 
 **Chapter 6:** functions thus far in the book have resulted in print statements and not returns. this chapter deals with fruitful functions or functions that yield return values. if you want to see what a fruitful function returns, you have to call it using a print statement otherwise there will be no output in the terminal. i'm guessing that this is the reason why the author chooses to introduce incremental development. incremental development involves testing a small amount of code at a time which cuts down on debugging and also ensures that you know if a fruitful function works should you call it later in your program.
 * fruitful functions are functions with a return value. some void functions have return values. the difference is that in a fruitful function the return statement includes an expression.
@@ -96,7 +98,41 @@ if an index error has a negative value, it counts backwards from the end of the 
 * total += x is the same as total = total + x
 * most list operations are some combination of map, filter, and reduce.
 * a list of characters does not a string make
-* calling a built-in method requires dot notation. why?
-* if two objects are identical, they are also equivalent. but if they are equivalent, they are not necessarily identical.<br>
+* calling a built-in method requires dot notation. why?<br>
 
-### <ins>Objects</ins> 
+(ins tag needed in order for underline to show on github)
+
+(as an aside, I wanted to make a word doc for my notes as I was reading this chapter but I realized that since markdown files recognize html, I'd have more flexibility with this file and I'd learn more about HTML as well.)
+
+### <ins>10.10 - Objects</ins> 
+a = 'banana'
+b = 'banana'
+
+a and b are two different OBJECTS but those objects have the same value.
+
+an object has a value. an object is not a value.
+
+<mark>if two objects are identical, they are also equivalent. but if they are equivalent, they are NOT necessarily identical.</mark>
+
+### <ins>10.11 - Aliasing</ins> 
+* the association of an object with a variable is called a <b>reference</b>.
+* an object with more than one reference has more than one name, so we say that object is <b>aliased</b>.
+* if the aliased object is mutable(e.g. a string), changes made with one alias affect the other. but this is prone to error so its best not to alias with mutable objects.
+* "even with  mutable objects, it almost never makes a difference whether a and b refer to the same string or not." why? what is the use case for aliasing? like .copy() in pandas?
+
+### <ins>10.12 - List Arguments</ins> 
+* When you pass a list to a function, the function gets a reference to the list. If the function modifies the list, the caller sees the change. 
+* an example of aliasing is in _delete_head(t)_. both _t_ and _letters_ refer to the same object. 
+* .append() modifies a list
+* the + operator (to join two lists) creates a new list. 
+* the _bad_delete_head(t)_ function shows how t and letters have the same object at the beginning but by the end, t is a new list and letters remains unchanged.
+
+### <ins>Tips For Working With Lists</ins> 
+1. Read the documentation carefully and test list methods in interactive more. <br>
+(most list methods modify the argument and return None. which is the opposite of string methods.)
+e.g. t = t.sort() will return None so working with t in a following operation is likely to result in an error or nothing.
+2. Pick an idiom and stick with it.<br>
+e.g. del or pop or + 
+3. Make copies to avoid aliasing.<br>
+e.g. t = [3, 2, 1]<br>
+t2 = t[:] 
