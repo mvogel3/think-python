@@ -1,3 +1,6 @@
+# importing dependency from exercise 10.8
+import random
+
 cheeses = ['Cheddar', 'Edam', 'Gouda']
 numbers = [42, 123]
 empty = []
@@ -173,6 +176,7 @@ def nested_sum(b):
 print(nested_sum(nest_list))
 new_nest_list = [[1, 2], 3, [4], [5, 6, 7]]
 def nested_sum2(b):
+    '''returns the sum of a nested list'''
     fin_list = []
     for a in b:
         if type(a) is list:
@@ -183,5 +187,56 @@ def nested_sum2(b):
     return fin_list
 print(nested_sum2(new_nest_list))
 
+cumulative = [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10]
 def cumsum(w):
-    
+    '''returns the cumulative sum'''
+    i = 0
+    sum_cum = []
+    for x in w:
+        sum_cum.append(x+i)
+        i += x
+    return sum_cum
+print(cumsum(cumulative))
+
+def middle(l):
+    '''returns the list minus the first and last elements'''
+    return l[1:-1]
+myList = [1,2,3,4]
+def chop(l):
+    '''same function but returns None'''
+    l.pop(0)
+    l.pop(-1)
+    return None
+
+print(chop(myList))
+print(myList)
+
+myList = [1, 2, 3, 4]
+def is_sorted(l):
+    m = sorted(l)
+    if l == m:
+        return True
+    else:
+        return False
+print(is_sorted(myList))
+
+def is_anagram(word1, word2):
+    for letter in word1:
+        if letter not in word2:
+            return False
+        else:
+            return True
+print(is_anagram('cat', 'table'))
+
+
+def has_duplicates(l):
+    ll = []
+    for j in l:
+        if j not in ll:
+            ll.append(j)
+        else:
+            return True
+        
+print(has_duplicates(['t', '4', 't']))
+
+# def birthday():
