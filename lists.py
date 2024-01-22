@@ -118,7 +118,8 @@ print(rest)
 
 # 10.15 - Exercises
 nest_list = [[1, 2], 3, [4], [5, 6, 7]]
-print(len(nest_list))
+print(nest_list)
+print('check')
 def nested_sum(b):
     ctr = 0
     indices = []
@@ -128,40 +129,59 @@ def nested_sum(b):
         if type(a) is list:
             ctr += 1
             k = b.index(a)
+            print(k)
             indices.append(k) # saves the index numbers of the nests
             print(indices)
         else:
+            # g = b.pop(a)
             one_list.append(a)
-            print(one_list)
-            i = 0
-            # while i < len(b)-1: # len(b)-1 because i is starting at 0
-            for h in indices:
+    print(f'one list at this stage is:{one_list}')
+    print(f'indices final list is {indices}')
+
+    while i < len(b)-1: # len(b)-1 because i is starting at 0
+        print(f'i is: {i}')
+        for h in indices:
+            print(f'i is: {i}')
+            print(b[i])
+            print(b.index(b[i]))
+            print(h)
+            if h == b.index(b[i]):
+                # i +=1
+                # print(b.pop(i))
                 print(b[i])
-                print(h)
-                if h == b.index(b[i]):
-                    # print(b.pop(i))
-                    print(b[i])
-                    return b.pop(i)
-                else:
-                    return False
-                    i += 1
-
-                          
-                    #     i += 1
-                    # return b.pop(i)
-                        
-                        
-    
-                    
-
-
-    # return indices # if the result is [0, 2, 3], then the function is saving the indices of the nest correctly
-    # return ctr # if ctr = 3, then the function is counting all the nests correctly
+                p = b.pop(i)
+                one_list.extend(p) # adds the popped element to the new list without nesting it
+                print(f"one list is now {one_list}")
+                i += 1
+                # one_list += p
+                # print(f"one list is now {one_list}")
+            
+            
+                        # return one_list
+                        # return b.pop(i)
+            else:
+                i += 1
+        # i += 1
+                                # return False
+                                # i += 1
+                # one_list.extend(p)
+    print(f'one list at the end is:{one_list}')
+    return one_list
+    return indices # if the result is [0, 2, 3], then the function is saving the indices of the nest correctly
+    return ctr # if ctr = 3, then the function is counting all the nests correctly
             
 print(nested_sum(nest_list))
-    # while i < len(b)-1:
-    #     if type(a) is list:
-    #         ctr += 1
-    #         i += 1
-    #     else:
-    #         i += 1
+new_nest_list = [[1, 2], 3, [4], [5, 6, 7]]
+def nested_sum2(b):
+    fin_list = []
+    for a in b:
+        if type(a) is list:
+            fin_list.extend(a)
+        else:
+            fin_list.append(a)
+    return sum(fin_list)
+    return fin_list
+print(nested_sum2(new_nest_list))
+
+def cumsum(w):
+    

@@ -136,3 +136,9 @@ e.g. del or pop or +
 3. Make copies to avoid aliasing.<br>
 e.g. t = [3, 2, 1]<br>
 t2 = t[:] 
+
+*Exercise 10.1* <br>
+I had this idea that if I could compare the index numbers of the nests to the index numbers of the entire list and extend the list if the numbers matched. 
+Then I realized that I had wasted hours because the whole function could be solved with one for loop. the answer is in _nested_sum_2_.
+
+*Exercise 10.2* <br>
