@@ -1,5 +1,8 @@
 # Research
 * Python shell vs zsh shell
+* virtual environments and anaconda 
+* operating systems
+* how to go from learning Python to actually buildinf something
 * look into the 4.12 exercises and try learning the math
 * revisit base cases
 
@@ -141,4 +144,8 @@ t2 = t[:]
 I had this idea that if I could compare the index numbers of the nests to the index numbers of the entire list and extend the list if the numbers matched. 
 Then I realized that I had wasted hours because the whole function could be solved with one for loop. the answer is in _nested_sum_2_.
 
-*Exercise 10.2* <br>
+*Exercise 10.8* <br>
+learned a new git command: git reset (used to unadd a file if git commit has not been run)
+
+*Exercise 10.10* <br>
+look into using if name = main and what the significance of that is. 

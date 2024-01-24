@@ -279,3 +279,6 @@ def birthday(days):
     print ("In %d classrooms with %d students, %.1f%% had students\
  with duplicate birthdays." % (trials, k, (float(duplicate_count) / trials) * 100))
 print(birthday(trials))
+
+# 10.10
+
