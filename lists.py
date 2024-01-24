@@ -1,5 +1,6 @@
 # importing dependency from exercise 10.8
 import random
+from datetime import timedelta, datetime
 
 cheeses = ['Cheddar', 'Edam', 'Gouda']
 numbers = [42, 123]
@@ -239,4 +240,42 @@ def has_duplicates(l):
         
 print(has_duplicates(['t', '4', 't']))
 
-# def birthday():
+def has_duplicates2(my_list):
+    '''alternative solution to has_duplicates (for data structures & algorithms knowledge'''
+    i = 0
+    while i < len(my_list):
+        if my_list.count(my_list[i]) > 1:
+            return True
+        elif i == (len(my_list) - 1):
+            return False
+        i += 1
+
+# 10.8
+trials = 1000
+k = 23
+def generate_random_dates(start_date, end_date, k):
+    '''generates 23 random birthdays in a class cutoff range'''
+    random_dates = []
+    date_range = end_date - start_date
+    for _ in range(k):
+        random_days = random.randint(0, date_range.days)
+        random_date = start_date + timedelta(days=random_days)
+        random_dates.append(random_date.strftime('%Y-%m-%d')) # appends the birthdays to a list and strips the output so that only a date gets added to the list (no minutes or seconds, etc.)
+    return random_dates
+start_date = datetime(2019, 9, 1)
+end_date = datetime(2020, 8, 31)
+random_dates = generate_random_dates(start_date, end_date, 23)
+print(f"The random dates generated are:{random_dates}")
+# for index, date in enumerate(random_dates):
+#     print(f"{index+1}. {date.strftime('%Y-%m-%d')}")
+for index, date in enumerate(random_dates):
+    print(f"{index+1}. {date}") # prints the list in an easy to read way so I can check the output.
+
+def birthday(days):
+    duplicate_count = 0
+    for i in range(days):
+        if has_duplicates(generate_random_dates(start_date, end_date, k)):
+            duplicate_count += 1
+    print ("In %d classrooms with %d students, %.1f%% had students\
+ with duplicate birthdays." % (trials, k, (float(duplicate_count) / trials) * 100))
+print(birthday(trials))
