@@ -5,6 +5,7 @@
 * how to go from learning Python to actually buildinf something
 * look into the 4.12 exercises and try learning the math
 * revisit base cases
+* overflow in programming (applies to languages other than python)
 
 # Chapter Summaries/Take Aways/Notes
 
@@ -149,3 +150,7 @@ learned a new git command: git reset (used to unadd a file if git commit has not
 
 *Exercise 10.10* <br>
 look into using if name = main and what the significance of that is. 
+
+* learned floor division for this function. // drops the decimal instead of using the round function. 
+* watched a video on binary search algorithms. the author brought up the possibility of overflow in languages other than python. said that mid could be written as _mid = lo + (hi-lo)//2_ to avoid this problem. <br>
+[Here is the video](https://www.youtube.com/watch?v=tgVSkMA8joQ/ "Binary Search - A Different Perspective | Python Algorithms")

@@ -285,26 +285,54 @@ print(birthday(trials))
 # writing a function that splits a list
 # def split_list():
 
+# def in_bisect(word):
+#     with open('words.txt') as fd:
+#         word_list = fd.read().splitlines()
+#     #  possibly need a bested funciton here. 
+#     mid = len(word_list)/2
+#     # print(mid) # first check. the median of the wordlist was a decimal. 
+#     rounded_mid = round(mid)
+#     median = word_list[rounded_mid]
+#     if word < word_list[rounded_mid]:
+#         rounded_mid = rounded_mid/2
+#         word_list = word_list[0:rounded_mid]
+#         # return True
+#     elif word > word_list[rounded_mid]:
+#         rounded_mid = rounded_mid/2
+#         word_list = word_list[rounded_mid:]
+#         # return False
+#     else:
+#         rounded_mid = rounded_mid/2
+#         word_list = word_list[:rounded_mid]
+#         # if word in word_list:
+#         #     return word_list.index(word)
+#         # else:
+#         #     return False
+    # return word_list[rounded_mid]
+
+def slow_search(word):
+    with open('words.txt') as fd: # converts the file into a list
+        word_list = fd.read().splitlines()
+    if word in word_list:
+        return word_list.index(word)
+    else:
+        return False
+print(slow_search('zzz'))
+
 def in_bisect(word):
     with open('words.txt') as fd:
         word_list = fd.read().splitlines()
-    #  possibly need a bested funciton here. 
-    mid = len(word_list)/2
-    # print(mid) # first check. the median of the wordlist was a decimal. 
-    rounded_mid = round(mid)
-    median = word_list[rounded_mid]
-    if word[0] < median[0]:
-        rounded_mid/2
-        return True
-    elif word[0] > median[0]:
-        return False
-    else:
-        if word in word_list:
-            return True
+    print(word_list[113808])
+    lo = 0
+    hi = len(word_list)
+    while lo < hi:
+        mid = (lo + hi)//2 # approximate midpoint. ensures mid is an integer
+        if word_list[mid] < word:
+            lo = mid + 1
         else:
-            return False
-    return word_list[rounded_mid]
-print(in_bisect('beekeeper'))
+            hi = mid
+    return lo
+print(in_bisect('zzz'))
     
     # while i < len(words)-1:
     #     if word in words[0:len(words)/2]:
