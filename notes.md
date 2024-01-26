@@ -154,3 +154,5 @@ look into using if name = main and what the significance of that is.
 * learned floor division for this function. // drops the decimal instead of using the round function. 
 * watched a video on binary search algorithms. the author brought up the possibility of overflow in languages other than python. said that mid could be written as _mid = lo + (hi-lo)//2_ to avoid this problem. <br>
 [Here is the video](https://www.youtube.com/watch?v=tgVSkMA8joQ/ "Binary Search - A Different Perspective | Python Algorithms")
+* using the algorithm from the above video, hi is always going to equal lo at the end. 
+* since lo = hi, either is the index of the word being passed through or it is the index of the next word in alphabetical order (if the word isn't in the list). therefore, if the argument does not equal the word at that index, the function returns None.

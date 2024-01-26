@@ -317,12 +317,11 @@ def slow_search(word):
         return word_list.index(word)
     else:
         return False
-print(slow_search('zzz'))
+print(slow_search('beekeeper'))
 
 def in_bisect(word):
     with open('words.txt') as fd:
         word_list = fd.read().splitlines()
-    print(word_list[113808])
     lo = 0
     hi = len(word_list)
     while lo < hi:
@@ -331,11 +330,10 @@ def in_bisect(word):
             lo = mid + 1
         else:
             hi = mid
-    return lo
-print(in_bisect('zzz'))
+    if word != word_list[hi]:
+        return None
+    else:
+        return lo
+
+print(in_bisect('beekeeper'))
     
-    # while i < len(words)-1:
-    #     if word in words[0:len(words)/2]:
-    #         return True
-    #     else:
-    #         return False
