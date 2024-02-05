@@ -337,3 +337,40 @@ def in_bisect(word):
 
 print(in_bisect('beekeeper'))
     
+def reverse_pairs():
+    with open('words.txt') as fd:
+        word_list = fd.read().splitlines()
+    mid = len(word_list)//2
+    # lo = word_list[:mid]
+    # hi = word_list[mid:]
+    pairs = []
+    for w in word_list[:mid]:
+        if w[::-1] in word_list[mid:]:
+            pairs.append([w, w[::-1]])
+    return pairs
+# print(reverse_pairs())
+
+def find_double(word):
+    '''github solution that perfects the three_doubles_works function
+    I was working on.'''
+    i = 0
+    ctr = 0 
+    while i < len(word) - 2:
+        if word[i+1] == word[i]:
+            ctr += 1
+            i += 2
+            if ctr == 3:
+                return word
+            else:
+                ctr = 0
+                i += 1
+    return None
+
+def interlock(word1, word2):
+    with open('words.txt') as fin:
+        word_list = fin.read().splitlines()
+    i = 0
+    j = 1
+    while i < len(word1):
+
+print(interlock('schoe', 'cold'))

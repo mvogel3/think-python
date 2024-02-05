@@ -156,3 +156,8 @@ look into using if name = main and what the significance of that is.
 [Here is the video](https://www.youtube.com/watch?v=tgVSkMA8joQ/ "Binary Search - A Different Perspective | Python Algorithms")
 * using the algorithm from the above video, hi is always going to equal lo at the end. 
 * since lo = hi, either is the index of the word being passed through or it is the index of the next word in alphabetical order (if the word isn't in the list). therefore, if the argument does not equal the word at that index, the function returns None.
+
+*Exercise 10.11* <br>
+* extend creates one cohesive list, appending a list to a list creates a nested list which made more sense for a function that returns pairs.
+* this for look took forever to run. could possibly use bisection again but I'm not sure. 
+* is using variables always the way to go for loops? the function works whether I assign half the list to a variable or not but I'm not sure what the best practice is.
