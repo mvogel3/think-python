@@ -366,11 +366,17 @@ def find_double(word):
                 i += 1
     return None
 
-def interlock(word1, word2):
+
+
+def interlock():
     with open('words.txt') as fin:
         word_list = fin.read().splitlines()
-    i = 0
-    j = 1
-    while i < len(word1):
+    for w in word_list:
+        even, odd = w[::2], w[1::2]
+        if even in word_list and odd in word_list:
+            return even, odd
+    # i = 0
+    # j = 1
+    # while i < len(word1):
 
-print(interlock('schoe', 'cold'))
+print(interlock())
