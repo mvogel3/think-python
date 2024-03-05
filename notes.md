@@ -161,3 +161,38 @@ look into using if name = main and what the significance of that is.
 * extend creates one cohesive list, appending a list to a list creates a nested list which made more sense for a function that returns pairs.
 * this for look took forever to run. could possibly use bisection again but I'm not sure. 
 * is using variables always the way to go for loops? the function works whether I assign half the list to a variable or not but I'm not sure what the best practice is.
+
+(decided to skip exercise 12. could not figure it out)
+
+returning to this textbook after about a month.
+
+**Chapter 11:** this chapter 
+
+### <u>Notes</u>
+* the author explains dictionaries as lists with less specific indicies. e.g. the indices of a list need to be integers but in a dictionary, they can be almost any data type. 
+* the indices of a dictionary are called keys.
+* each key "maps" to a value. 
+* the order of a dictionary is unpredictable but this is not an issue bc we make the keys. (could use sorted in certain occasions)
+* the len function returns the number of key-value pairs.
+* the in operator tells you whether something appears as a KEY in a dictionary (will not work for a value). 
+* using a for statement on a dictionary only traverses the keys.
+* dictionaries can have more than one key that maps to a value. (i.e. not all keys are unique)
+
+### <ins>11.4 - Reverse Lookup</ins> 
+Two problems with finding a key from a value:<br> 
+1. there might be more than one key that maps to the value. depending on the application, you might be able to pick one, or you have to make a list that contains all of them.
+2. there is no simple syntax to do a reverse look up; you have to search.
+
+reverse lookups are much slower than straightforward lookups. if you have to use them often, or the dictionary gets too big, the performance of the program will suffer.
+
+### <ins>11.5 - Dictionaries and Lists</ins> 
+* lists can be values in a dictionary but they canNOT be keys. dictionaries can also be values in a dictionary but NOT keys.
+* lists are not hashable because they are mutable.
+* tuples can be keys because they are immutable.
+
+### <ins>11.6 - Memos</ins>
+a memo is a previously computed value stored for later use. <br>
+in this case, known is a dictionary that tracks the fibonacci numbers we already know. <br>
+if the argument is not in known, the function will calculate the fibonacci number for n and all the previous integers.
+
+### <ins>11.7 - Global Variables</ins>
