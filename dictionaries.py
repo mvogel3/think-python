@@ -7,7 +7,7 @@ print(eng2sp)
 # print(eng2sp['four']) (returns an exception)
 print(len(eng2sp))
 
-# 11.2
+# 11.2 - Dictionary as a Collection of Counters
 def histogram(s):
     '''counts how many times a letter appears in a string'''
     d = dict()
@@ -78,4 +78,42 @@ def fibonacci(n):
 print(fibonacci(7))
 print(known)
 
-# 11.7 - Global Variables
+# 11.10 - Exercise
+
+# 11.1
+def words_dict():
+    '''reads word.txt and assigns the lines as keys in a dictionary'''
+    with open('words.txt') as fin:
+        lines = fin.read().splitlines()#[0:10]
+    word_dict = dict()
+    c = 0
+    for word in lines:
+        word_dict[word] = c + 1
+        c += 1
+    return word_dict
+# print(words_dict())
+def lookup(k):
+    word_dict = words_dict()
+    v = word_dict[k]
+    if k in word_dict:
+        return v
+print(lookup('aa'))
+
+# 11.2
+def set_invert(d):
+    inverse = dict()
+    for key in d:
+        val = d[key]
+        inverse.setdefault(val, []).append(key)
+    return inverse
+print(set_invert(g))
+
+# 11.3
+def ack(m, n):
+    """ackermann function"""
+    if m == 0:
+        return n + 1
+    if m > 0 and n ==0:
+        return ack(m-1, 1)
+    if m > 0 and n > 0:
+        return ack(m-1, ack(m, n-1))

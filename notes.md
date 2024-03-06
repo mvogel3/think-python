@@ -196,3 +196,22 @@ in this case, known is a dictionary that tracks the fibonacci numbers we already
 if the argument is not in known, the function will calculate the fibonacci number for n and all the previous integers.
 
 ### <ins>11.7 - Global Variables</ins>
+* to reassign a global variable inside a function, you have to declare the global variable before you use it. (this is called a global statement)
+* if a global variable refers to a mutable value, you can modify the value without declaring the variable.<br>
+e.g.<br>
+known = {0:0, 1:1}<br>
+def example(): <br>
+known[2] = 1
+* you can add, remove, and replace elemements of a global list or dictionary, but if you want to reassign a variable, you have to declare it.<br>
+e.g.<br>
+def example2():<br>
+global known<br>
+known = dict()
+
+global variables can be useful, but if you have a lot of them, and you modify them frequently, they can make programs hard to debug.
+
+*Exercise 11.1* <br>
+cannot raise a KeyError with a custom message without using try & except
+
+*Exercise 11.2* <br>
+I am so proud of myself for this one!!! using stackoverflow, I learned that I would need to append all the keys/new values to an empty list otherwise the function would return a TypeError. This can be written in one line of code instead of 5 which makes the function more concise. it also controls for times when there are repeat values in the dictionary to be inverted, 
