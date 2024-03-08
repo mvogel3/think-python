@@ -228,4 +228,9 @@ as I tested this function with larger numbers, I get a RecursionError if m is gr
 [RecursionError Link (StackOverflow)](https://stackoverflow.com/questions/3323001/what-is-the-maximum-recursion-depth-and-how-to-increase-it "What is the maximum recursion depth, and how to increase it?") <br>
 the same stack overflow page also discussed using memos to decrease the recursion stack size. not fully sure what that means or how it would work but it felt relevant. <br>
 
-why do dictionaries not have to be declared global in functions?
+why do dictionaries not have to be declared global in functions?<br>
+
+was getting a KeyError when passing arguments not in memo_ack. i realized that I need to account for the cases when m exists as a key and n does not. this was done using an "and" statement as well as using the .keys() built-method. Geeks for geeks also had a good page for this. 
+[StackOverflow Link for iterating over nested dictionaries](https://stackoverflow.com/questions/64980051/python-accessing-specific-items-from-a-nested-dictionary?rq=3 "Python - Accessing specific items from a nested dictionary")
+
+*Exercise 11.4* <br>

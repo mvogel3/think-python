@@ -112,18 +112,30 @@ print(set_invert(g))
 memo_ack = {0:{0:1, 1:2, 2:3}, 1:{0:2, 1:3}, 2:{0:3, 1:5}}
 def ack(m, n):
     """ackermann function (from chapter 6)"""
-    if m in memo_ack:
+    if m in memo_ack.keys() and n in memo_ack[m].keys():
         return memo_ack[m][n]
     else:
         if m == 0:
-            return n + 1
+            res = n + 1
         if m > 0 and n == 0:
-            return ack(m-1, 1)
+            res = ack(m-1, 1)
         if m > 0 and n > 0:
-            return ack(m-1, ack(m, n-1))
-    # memo_ack.setdefault(m,{}).setdefault(n,res)
-    # return res
+            res = ack(m-1, ack(m, n-1))
+    memo_ack.setdefault(m,{}).setdefault(n,res)
+    return res
     
-print(ack(2,1))
+print(ack(3,4))
+# print(memo_ack)
 # import sys
 # print(sys.getrecursionlimit())
+
+# 11.4
+def has_duplicates2(my_list):
+    '''has_duplicates function from chapter 10.7'''
+    i = 0
+    while i < len(my_list):
+        if my_list.count(my_list[i]) > 1:
+            return True
+        elif i == (len(my_list) - 1):
+            return False
+        i += 1

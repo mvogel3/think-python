@@ -241,7 +241,7 @@ def has_duplicates(l):
 print(has_duplicates(['t', '4', 't']))
 
 def has_duplicates2(my_list):
-    '''alternative solution to has_duplicates (for data structures & algorithms knowledge'''
+    '''alternative solution to has_duplicates (for data structures & algorithms knowledge)'''
     i = 0
     while i < len(my_list):
         if my_list.count(my_list[i]) > 1:
