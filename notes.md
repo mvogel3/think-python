@@ -6,6 +6,7 @@
 * look into the 4.12 exercises and try learning the math
 * revisit base cases
 * overflow in programming (applies to languages other than python)
+* recursion depth limits: [why they're there, how to change them, when to change them, how to avoid them, and also the math/computer science behind them]
 
 # Chapter Summaries/Take Aways/Notes
 
@@ -214,4 +215,17 @@ global variables can be useful, but if you have a lot of them, and you modify th
 cannot raise a KeyError with a custom message without using try & except
 
 *Exercise 11.2* <br>
-I am so proud of myself for this one!!! using stackoverflow, I learned that I would need to append all the keys/new values to an empty list otherwise the function would return a TypeError. This can be written in one line of code instead of 5 which makes the function more concise. it also controls for times when there are repeat values in the dictionary to be inverted, 
+I am so proud of myself for this one!!! using stackoverflow, I learned that I would need to append all the keys/new values to an empty list otherwise the function would return a TypeError. This can be written in one line of code instead of 5 which makes the function more concise. it also controls for times when there are repeat values in the dictionary to be inverted.
+[StackOverflow Link](https://stackoverflow.com/questions/34815461/append-to-list-in-a-dictionary-after-setdefault "Append to list in a dictionary after setdefault [duplicate]")
+
+<!-- i just learned you can comment on markdown! -->
+
+you can comment on markdown using the same keyboard command for python files.
+
+*Exercise 11.3* <br>
+I realized that in order to "memoize" a function with two arguments and one output, I'd need to make a nested dictionary. I used the m values as the first keys and then the n values as a value/secondary key with the return value as the secondary value. using w3 schools I learned how to traverse nested dictionaries using square brackets and that allowed me to access the return value I needed.<br>
+as I tested this function with larger numbers, I get a RecursionError if m is greater than 3 and n is greater than 6. using stack overflow, I found that these errors occur when the functioin hits a recursion depth limit. using the built-in python library "sys", i was able to check that my current limit is set to 1000. 
+[RecursionError Link (StackOverflow)](https://stackoverflow.com/questions/3323001/what-is-the-maximum-recursion-depth-and-how-to-increase-it "What is the maximum recursion depth, and how to increase it?") <br>
+the same stack overflow page also discussed using memos to decrease the recursion stack size. not fully sure what that means or how it would work but it felt relevant. <br>
+
+why do dictionaries not have to be declared global in functions?

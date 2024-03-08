@@ -109,11 +109,21 @@ def set_invert(d):
 print(set_invert(g))
 
 # 11.3
+memo_ack = {0:{0:1, 1:2, 2:3}, 1:{0:2, 1:3}, 2:{0:3, 1:5}}
 def ack(m, n):
-    """ackermann function"""
-    if m == 0:
-        return n + 1
-    if m > 0 and n ==0:
-        return ack(m-1, 1)
-    if m > 0 and n > 0:
-        return ack(m-1, ack(m, n-1))
+    """ackermann function (from chapter 6)"""
+    if m in memo_ack:
+        return memo_ack[m][n]
+    else:
+        if m == 0:
+            return n + 1
+        if m > 0 and n == 0:
+            return ack(m-1, 1)
+        if m > 0 and n > 0:
+            return ack(m-1, ack(m, n-1))
+    # memo_ack.setdefault(m,{}).setdefault(n,res)
+    # return res
+    
+print(ack(2,1))
+# import sys
+# print(sys.getrecursionlimit())
