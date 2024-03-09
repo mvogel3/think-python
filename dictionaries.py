@@ -1,3 +1,7 @@
+# dependencies for generating random integer values in Exercise 11.4
+from random import seed
+from random import randint
+
 # my first dictionary
 
 eng2sp = dict()
@@ -130,7 +134,7 @@ print(ack(3,4))
 # print(sys.getrecursionlimit())
 
 # 11.4
-def has_duplicates2(my_list):
+def old_has_duplicates(my_list):
     '''has_duplicates function from chapter 10.7'''
     i = 0
     while i < len(my_list):
@@ -139,3 +143,65 @@ def has_duplicates2(my_list):
         elif i == (len(my_list) - 1):
             return False
         i += 1
+
+def has_duplicates(my_list):
+    '''new duplicate search function using a dictionary'''
+    items = dict()
+    for l in my_list:
+        items[l] = 1 + items.get(l, 0)
+    for i in items:
+        if items[i] >= 2:
+            return True
+        else:
+            return False  
+print(has_duplicates(['t', '4', 't']))
+
+# 11.5
+def rotate_word(s, i):
+    '''from chapter 8'''
+    for abcd in ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"]:
+        s = ''.join([abcd[(abcd.index(char) + i) % 26] if char in abcd else char for char in s])
+    return s
+# print(rotate_word('aa',0))
+
+def in_bisect(word, word_list):
+    lo = 0
+    hi = len(word_list)
+    while lo < hi:
+        mid = (lo + hi)//2 # approximate midpoint. ensures mid is an integer
+        if word_list[mid] < word:
+            lo = mid + 1
+        else:
+            hi = mid
+    if word != word_list[hi]:
+        return None
+    else:
+        return lo
+
+cypher = {}
+def rotate_pairs():
+    pairs = dict()
+    with open('words.txt') as fin:
+        lines = fin.read().splitlines()#[0:10]
+    rotator = randint(0, 10)
+    print(rotator)
+    for l in lines:
+        r = rotate_word(l, rotator)
+        if in_bisect(r, lines) != None:
+            pairs[l] = r
+    # cypher.setdefault(l,{}).setdefault(r,rotator)
+    return len(pairs)
+
+print(rotate_pairs())
+print(len(cypher))
+# the two commented lines below are for using nested dictionaries as memos.
+# # if m in memo_ack.keys() and n in memo_ack[m].keys():
+#     return memo_ack[m][n]
+
+
+# seed random number generator
+# seed(1)
+# generate some integers
+# for _ in range(10):
+# 	value = randint(0, 10)
+# 	print(value)

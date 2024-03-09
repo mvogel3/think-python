@@ -234,3 +234,10 @@ was getting a KeyError when passing arguments not in memo_ack. i realized that I
 [StackOverflow Link for iterating over nested dictionaries](https://stackoverflow.com/questions/64980051/python-accessing-specific-items-from-a-nested-dictionary?rq=3 "Python - Accessing specific items from a nested dictionary")
 
 *Exercise 11.4* <br>
+* findng all the rotate pairs i'm assuming is referring to all the words that can be rotated any which way (-10, 1, 13, etc.) for simplicity, i'm starting with ROT13. the function will start as a list comparison where I run the words.txt file against itself and make key-value pairs of the original and rotated words. i started with part of the txt file and then tried the whole file which took forever to run so I think im going to try adding a bisect search to this exercise. if I use a bisect search and also randomize the integers I'm rotating by, I should be able to make a mini program. 
+* tried to using the bisect search and the regular list search both resulted in 94 key-value pairs so to my knowledge it works!
+* adding random integers to rotate by and then memoizing with a nested dictionary. 
+* (confused by the concept of seeding a psuedo random number generater.)
+* using a random integer generator for 0-10 (will expand later). the function is currently working so now I'm going to add a dictionary outside the program to memoize and record the outputs each time the function is run. (is it possible to run the program using all the possible integers instead of using a random generator and running it multiple times?)
+* using range(1-10) in a nested for loop means that each is being rotated a different way. but even then the program isn't working correctly because "aa" rotated 0 times is "aa" and that doesn't show up in the return dictionary. I'm going to go back to using random numbers and try to figure out ranges later.
+* using the random integer did work even when the integer was 0

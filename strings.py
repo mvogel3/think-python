@@ -112,3 +112,12 @@ def any_lowercase4(s):
     return flag
         
 any_lowercase4('haNnah')
+
+# 8.5
+def rotate_word(s, i):
+    '''came back to write this for chapter 11. the list comprehension is from wikipedia'''
+    for abcd in ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"]:
+        s = ''.join([abcd[(abcd.index(char) + i) % 26] if char in abcd else char for char in s])
+    return s
+
+print(rotate_word('melon', -10))
