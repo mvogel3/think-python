@@ -189,15 +189,16 @@ def rotate_pairs():
         r = rotate_word(l, rotator)
         if in_bisect(r, lines) != None:
             pairs[l] = r
-    # cypher.setdefault(l,{}).setdefault(r,rotator)
-    return len(pairs)
+            cypher.setdefault(l,{}).setdefault(rotator,r) # naturally the index error was an indent error on my part lol
+            # should the second key be the rotator number or the rotated word?
+    return pairs
 
 print(rotate_pairs())
-print(len(cypher))
-# the two commented lines below are for using nested dictionaries as memos.
-# # if m in memo_ack.keys() and n in memo_ack[m].keys():
-#     return memo_ack[m][n]
+print(cypher)
 
+# the two commented lines below are for using nested dictionaries as memos.
+        # if l in cypher.keys() and rotator in cypher[l].keys():
+        #     return cypher[l][rotator]
 
 # seed random number generator
 # seed(1)
@@ -205,3 +206,5 @@ print(len(cypher))
 # for _ in range(10):
 # 	value = randint(0, 10)
 # 	print(value)
+
+# 11.6
