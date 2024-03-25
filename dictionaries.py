@@ -165,6 +165,8 @@ def rotate_word(s, i):
 # print(rotate_word('aa',0))
 
 def in_bisect(word, word_list):
+    # with open('words.txt') as fd:
+    #     word_list = fd.read().splitlines()
     lo = 0
     hi = len(word_list)
     while lo < hi:
@@ -177,24 +179,55 @@ def in_bisect(word, word_list):
         return None
     else:
         return lo
+# print(in_bisect('xx'))
+import bisect as bs
+
+def exist_check(a, x):
+    '''
+	Checks if a is in x.
+	a: string
+	x: list
+	
+	Returns: bool
+	'''
+	#https://docs.python.org/2/library/bisect.html
+    i = bs.bisect_left(a, x)
+    if i != len(a) and a[i] == x:
+        return True
+    return False
+
 
 cypher = {}
 def rotate_pairs():
     pairs = dict()
     with open('words.txt') as fin:
         lines = fin.read().splitlines()#[0:10]
-    rotator = randint(0, 10)
-    print(rotator)
+    # rotator = randint(0, 10)
+    # print(rotator)
     for l in lines:
-        r = rotate_word(l, rotator)
-        if in_bisect(r, lines) != None:
-            pairs[l] = r
-            cypher.setdefault(l,{}).setdefault(rotator,r) # naturally the index error was an indent error on my part lol
+        for i in range(1, 26): #could also do range(-25,25) but i dont care to mess with this function again
+            r = rotate_word(l, i)
+            # print(i)
+            if exist_check(lines, r) == True:
+                pairs[l] = r
+                cypher.setdefault(l,{}).setdefault(i,r) # naturally the index error was an indent error on my part lol
             # should the second key be the rotator number or the rotated word?
-    return pairs
+    return len(pairs)
+
 
 print(rotate_pairs())
 print(cypher)
+# def find_rot_pairs():
+#     final_list = []
+#     for word in word_dict:
+#         for i in range(1, 26):
+#             if rotate.rotate_word(word, i) in word_dict:
+#                 final_list.append((word, i, rotate.rotate_word(word, i)))
+#     final_list.sort()
+#     for pair in final_list:
+#         print pair
+
+# find_rot_pairs()
 
 # the two commented lines below are for using nested dictionaries as memos.
         # if l in cypher.keys() and rotator in cypher[l].keys():

@@ -167,7 +167,8 @@ look into using if name = main and what the significance of that is.
 
 returning to this textbook after about a month.
 
-**Chapter 11:** this chapter 
+**Chapter 11:** this chapter deals with dictionaries. I've worked with dictionaries before in data analysis but lists were far more common. this chapter allowed me to understand the many other uses of dictionaries and encouraged me to get creative with them which I enjoyed. it also touched on hashabile data types as well as global variables. <br>
+(as an aside, I do love how each chapter in this book has exercises that require or would be improved with topics not yet touched on. its comforting that said topics will be explained later in the book with more context.)
 
 ### <u>Notes</u>
 * the author explains dictionaries as lists with less specific indicies. e.g. the indices of a list need to be integers but in a dictionary, they can be almost any data type. 
@@ -244,7 +245,12 @@ was getting a KeyError when passing arguments not in memo_ack. i realized that I
 * using the random integer did work even when the integer was 0
 * it does's make sense to memoize this function since it takes no arguments. i think im going to leave it for now until I have a better idea.
 
+* finally got it to work!!! (3/25)
+
 *Exercise 11.6* <br>
+[CMU Pronounciation Dictionary Link](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)
 * downloaded the CMU pronunciation dictionary from github. adding it to my git ignore bc my github can't handle a file that large. 
 * pip installed pronouncing library but disovered it only works for python 2 and I'm not sure how to make a separate environment for that nor do i think it is worth it 
 * leaving 11.6 alone for now.
+
+**Chapter 12:** 
