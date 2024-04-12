@@ -253,4 +253,14 @@ was getting a KeyError when passing arguments not in memo_ack. i realized that I
 * pip installed pronouncing library but disovered it only works for python 2 and I'm not sure how to make a separate environment for that nor do i think it is worth it 
 * leaving 11.6 alone for now.
 
-**Chapter 12:** 
+**Chapter 12:** deals with the last built-in Python type: tuples. explains how all the built-in types work together. 
+
+### <u>Notes</u>
+* the values in a tupe can be any type and they are indexed by integers (like lists)
+* Tuples Are Immutable
+* the syntax for a tuple is a comma-separated list of values. (it is common practice to enclose the values in parentheses)
+* most list operators work on tuples. E.g. brackets, slice, etc. 
+* you cannot modify the elements of a tuple, but you can replace one tuple with another.
+* how relational operators work with tuples: Python starts by comparing the first element from each sequence. If they are equal, it goes on to the next elements, until it finds elements that differ. subsequent elements are not considered (even if they are really big).
+
+### <ins>12.12 - Tuple Assignment</ins>
