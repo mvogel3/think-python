@@ -38,3 +38,26 @@ s = 'abc'
 t = [0, 1, 2]
 for pair in zip(s,t):
     print(pair)
+print(list(zip(s,t))) # the result is a list of tuples
+
+print(list(zip('Anne', 'Elk'))) # if the sequences are not the same length, 
+# the result is the length of the shorter one. 
+
+t = [('a', 0), ('b', 1), ('c', 2)]
+# uses tuple assignment in a for loop to traverse a list of tuples
+for letter, number in t:
+    print(letter, number)
+
+def has_match(t1, t2):
+    '''traverses two (or more) sequences and returns True if there is an index i
+    such that t1[i] == t2[i]'''
+    for x, y in zip(t1, t2):
+        if x == y:
+            return True
+    return False
+
+# traverses the elements of a sequence and their indices using the built-in enumerate function
+for index, element in enumerate('abc'):
+    print(index, element) 
+
+# 12.6 - Dictionaries and tuples

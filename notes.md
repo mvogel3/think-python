@@ -263,4 +263,13 @@ was getting a KeyError when passing arguments not in memo_ack. i realized that I
 * you cannot modify the elements of a tuple, but you can replace one tuple with another.
 * how relational operators work with tuples: Python starts by comparing the first element from each sequence. If they are equal, it goes on to the next elements, until it finds elements that differ. subsequent elements are not considered (even if they are really big).
 
-### <ins>12.12 - Tuple Assignment</ins>
+### <ins>12.2 - Tuple Assignment</ins>
+a, b = b, a
+
+### <ins>12.4 - Variable-Length Argument Tuples</ins>
+* a parameter name that begins with "*" gathers arguments into a tuple. 
+* the same is true for scatter. parameters that begin with * will be passed through as multiple arguments. 
+
+### <ins>12.5 - Lists and Tuples</ins>
+* Iterators are similar to lists in some ways, but unlike lists, you cant an index to select an element from an iterator. 
+* the result from the built-in function enumerate is an 'enumerate object' which iterates a sequence of pairs; each pair contains an index (starting from 0) and an element from the given sequence. (page 119)
