@@ -62,14 +62,14 @@ for index, element in enumerate('abc'):
 
 # 12.6 - Dictionaries and tuples
 d = {'a':0, 'b':1, 'c':2}
-# making a dictionary from a tuple
+# making a tuple from a dictionary
 t = d.items()
 print(t)
 
 for key, value in d.items():
     print(key, value)
 
-# making a tuple from a dictionary
+# making a dictionary from a tuple
 t = [('a', 0), ('c', 2), ('b', 1)]
 d = dict(t)
 print(d)
@@ -103,3 +103,31 @@ print(d)
 print(structshape(d))
 
 # 12.10 - Exercises
+
+# 12.1
+def item_count(s):
+    items = {}
+    for l in s:
+        items[l] = 1 + items.get(l, 0)
+    return items
+def most_frequent(s):
+    hist = item_count(s)
+    t = []
+    for letter, frequency in hist.items():
+        t.append((frequency, letter))
+    t.sort(reverse=True)
+    let = []
+    for freq, x in t:
+        let.append(x)
+    return let
+
+def read_file(filename):
+    """Returns the contents of a file as a string."""
+    return open(filename).read()
+
+s = read_file('words.txt')
+t = most_frequent(s)
+for x in t:
+    print(x)
+
+# 12.2

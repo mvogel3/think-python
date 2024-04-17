@@ -293,3 +293,10 @@ E.g. tuples don't have the methods "sort" and "reverse". instead they have _the 
 In order to import and use it as a module, I had to run the structshape.py file on my machine before referencing it in tuples.py
 
 *Exercise 12.1* <br>
+1. recycling the first part of has_duplicates() from the previous chapter
+### <u>Notes to Self</u>
+After comparing my plan with the provided solution, I realized that the author's way uses multiple functions. 
+* the first function maps the letter frequencies. 
+* the second function appends the count and corresponding letter into a list and sorts it high to low.
+* the third function reads a txt file as a string.
+* the fourth (function?) contains the if name==main business which i still do not understand at all. I haven't played around with it because I have not been using separate files for each exercise. as the textbook continues, I may have to start.
