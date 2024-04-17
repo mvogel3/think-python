@@ -273,3 +273,23 @@ a, b = b, a
 ### <ins>12.5 - Lists and Tuples</ins>
 * Iterators are similar to lists in some ways, but unlike lists, you cant an index to select an element from an iterator. 
 * the result from the built-in function enumerate is an 'enumerate object' which iterates a sequence of pairs; each pair contains an index (starting from 0) and an element from the given sequence. (page 119)
+
+### <ins>12.6 - Dictionaries and Tuples</ins>
+* Dictionaries have a built-in method called "items" that returns a sequence of tuples where each tuple is a key-value pair. <br>
+The result is a "dict_items" object which is an iterator that iterates the key-value pairs.
+* can make a dictionary by zipping a string and a range of numbers.
+* the dictionary method "update" adds a list of tuples as key-value pairs to an exisiting dictionary.
+
+### <ins>12.7 - Sequences of Sequences</ins>
+#### Reasons to Use Tuples Over Lists <br>
+1. In some contexts, like a return statement, it is syntactically simpler to create a tuple than a list.
+2. If you want to use a sequence as a dictionary key, you have to use an immutable type like a tuple or string.
+3. If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.
+
+### <u>Notes</u>
+* Still lost on methods vs functions. <br>
+E.g. tuples don't have the methods "sort" and "reverse". instead they have _the functions_ "sorted" and "reversed".
+* interesting to note that for 12.8 (Debugging), I found the file online and copied the code to my computer in a new file. <br>
+In order to import and use it as a module, I had to run the structshape.py file on my machine before referencing it in tuples.py
+
+*Exercise 12.1* <br>

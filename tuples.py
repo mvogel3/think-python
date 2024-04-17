@@ -61,3 +61,45 @@ for index, element in enumerate('abc'):
     print(index, element) 
 
 # 12.6 - Dictionaries and tuples
+d = {'a':0, 'b':1, 'c':2}
+# making a dictionary from a tuple
+t = d.items()
+print(t)
+
+for key, value in d.items():
+    print(key, value)
+
+# making a tuple from a dictionary
+t = [('a', 0), ('c', 2), ('b', 1)]
+d = dict(t)
+print(d)
+
+# more concise way to make a dictionary
+d2 = dict(zip('abcefg', range(6)))
+print(d2)
+
+# 12.8 - Debugging
+# importing the structshape file which summarizes the "shape" of the data structure
+from structshape import structshape 
+t = [1,2,3]
+print(structshape(t))
+
+t2 = [[1,2], [3,4], [5,6]]
+print(structshape(t2))
+
+# if the elemeents of the list are not the same type, structshape groups them, in order, by type.
+t3 = [1,2,3,4.0,'5','6',[7],[8],9]
+print(structshape(t3))
+
+# list of tuples
+s = 'abc'
+lt = list(zip(t,s))
+print(lt)
+print(structshape(lt))
+
+# dictionary with 3 items that map integers to strings
+d = dict(lt)
+print(d)
+print(structshape(d))
+
+# 12.10 - Exercises
