@@ -125,9 +125,22 @@ def read_file(filename):
     """Returns the contents of a file as a string."""
     return open(filename).read()
 
-s = read_file('words.txt')
-t = most_frequent(s)
-for x in t:
-    print(x)
+# s = read_file('words.txt')
+# t = most_frequent(s)
+# for x in t:
+#     print(x)
 
 # 12.2
+def signature(s):
+    """Returns the signature of this string, which is a string
+    that contains all of the letters in order.
+    """
+    t = list(s)
+    t.sort()
+    t = ''.join(t)
+    return t
+
+def are_anagrams(t, s):
+    item = dict()
+
+    

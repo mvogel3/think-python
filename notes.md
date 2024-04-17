@@ -300,3 +300,8 @@ After comparing my plan with the provided solution, I realized that the author's
 * the second function appends the count and corresponding letter into a list and sorts it high to low.
 * the third function reads a txt file as a string.
 * the fourth (function?) contains the if name==main business which i still do not understand at all. I haven't played around with it because I have not been using separate files for each exercise. as the textbook continues, I may have to start.
+
+*Exercise 12.2* <br>
+1. writing a function that returns all the anagrams. I want to use the first instance of a word as the key.<br>
+(technically I've mostly solved this already with the rotate pairs function but I think the purpose of this exercise is to play around with data types so I'll try a differennt approach)
+2. checked the solution and grabbed the signature function which sorts each letter in a string. the list will become the keys in the word_map function.
