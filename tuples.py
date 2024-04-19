@@ -140,7 +140,25 @@ def signature(s):
     t = ''.join(t)
     return t
 
-def are_anagrams(t, s):
-    item = dict()
+def are_anagrams(filename):
+    item = {}
+    for line in open(filename):
+        word = line.strip().lower()
+        t = signature(word)
 
-    
+        if t not in item:
+            item[t] = [word]
+        else:
+            item[t].append(word)
+    return item
+print(are_anagrams('words.txt'))
+
+def print_anagram_sets(d):
+    """Prints the anagram sets in d.
+
+    d: map from words to list of their anagrams
+    """
+    for v in d.values():
+        if len(v) > 1:
+            print (len(v), v)
+
