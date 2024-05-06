@@ -151,7 +151,6 @@ def are_anagrams(filename):
         else:
             item[t].append(word)
     return item
-print(are_anagrams('words.txt'))
 
 def print_anagram_sets(d):
     """Prints the anagram sets in d.
@@ -161,4 +160,63 @@ def print_anagram_sets(d):
     for v in d.values():
         if len(v) > 1:
             print (len(v), v)
+
+def print_anagram_sets_in_order(d):
+    """Prints the anagram sets in d in decreasing order of size.
+
+    d: map from words to list of their anagrams
+    """
+
+    # make a list of (length, word pairs)
+    t = []
+    for v in d.values():
+        if len(v) > 1:
+            t.append((len(v), v))
+
+    # sort in ascending order of length
+    t.sort()
+
+    # print the sorted list
+    for x in t:
+        print(x)
+def filter_length(d, n):
+    """Select only the words in d that have n letters.
+
+    d: map from word to list of anagrams
+    n: integer number of letters
+
+    Returns: new map from word to list of anagrams
+    """
+    res = {}
+    for word, anagrams in d.items():
+        if len(word) == n:
+            res[word] = anagrams
+    return res
+
+
+d = are_anagrams('words.txt')
+print(print_anagram_sets_in_order(d))
+
+eight_letters = filter_length(d, 8)
+print(print_anagram_sets_in_order(eight_letters))
+
+def file(f):
+    '''converts words file into a list as a separate function'''
+    with open(f) as fd: 
+        word_list = fd.read().splitlines()
+    return word_list
+
+def children(x):
+    '''returns a list of all the words that can be made if any one letter
+    is removed from the word x'''
+    word_list = file('words.txt')
+    offspring = []
+    i = 0
+    while i < len(x):
+        w = x[:i] + x[i+1:]
+        if w in word_list:
+            offspring.append(w)
+        i += 1
+    return offspring
+print(children('sprite'))
 
