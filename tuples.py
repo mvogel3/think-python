@@ -204,8 +204,6 @@ def file(f):
     '''converts words file into a list as a separate function'''
     with open(f) as fd: 
         word_list = fd.read().splitlines()
-    singles = ["I", "a", " "]
-    word_list.extend(singles)
     return word_list
 
 def children(x):
@@ -216,11 +214,9 @@ def children(x):
     i = 0
     while i < len(x):
         w = x[:i] + x[i+1:]
-        print(w)
         if w in word_list:
             offspring.append(w)
         i += 1
-        print(i)
     return offspring
 print(children('sprite'))
 
