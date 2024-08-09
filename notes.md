@@ -309,3 +309,5 @@ After comparing my plan with the provided solution, I realized that the author's
 *Exercise 12.4* <br>
 I ended up using the author's answer for this one and adding the file to my gitignore. after a few months off of coding, I'm realizing that it will take a while to get back into the swing of things. <br>
 In addition, I'm learning that the exercises from here on out will require separate python files as they are too big to be run in my chapter notes files. they also require functions that all work together and depend on global variables. I'm still figuring out how that works for best coding practice but it is a pattern i'm recognizing in the answer keys.
+
+**Chapter 13: Data Structure Selection** deals with how to select which core data structures to use and how to implement them. this is a good review chapter as I pick back up this textbook.
